@@ -300,15 +300,14 @@
 
         /* About */
         .about {
-            padding: 120px 0;
+            padding: 80px 0;
             background: var(--background);
         }
 
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
+            display: block;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .about-text h2 {
@@ -329,6 +328,8 @@
         .about-highlights {
             display: grid;
             gap: 24px;
+            align-self: start;
+            margin-top: 0;
         }
 
         .highlight {
@@ -349,6 +350,81 @@
             color: var(--text-secondary);
             font-size: 14px;
             line-height: 1.6;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px 24px;
+            row-gap: 48px;
+            margin: 32px 0;
+            justify-items: center;
+        }
+
+        .team-member {
+            text-align: center;
+            width: 100%;
+            max-width: 180px;
+        }
+
+        .team-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 16px;
+            border: 3px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .team-photo:hover {
+            border-color: var(--accent);
+            transform: scale(1.05);
+        }
+
+        .team-placeholder {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--surface);
+            border: 3px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 24px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .team-member h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0px;
+            line-height: 1.2;
+        }
+
+        .team-member .role {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 2px;
+            line-height: 1.1;
+        }
+
+        .team-member .linkedin {
+            font-size: 12px;
+        }
+
+        .team-member .linkedin a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .team-member .linkedin a:hover {
+            color: var(--accent-hover);
         }
 
         /* Contact */
@@ -451,8 +527,11 @@
             }
 
             .about-content {
-                grid-template-columns: 1fr;
-                gap: 48px;
+                max-width: 100%;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -500,6 +579,10 @@
 
             .contact-info {
                 grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .section-header h2 {
@@ -681,18 +764,48 @@
                     <p>Combining deep technical knowledge with business acumen, we create AI systems that drive measurable outcomes and real business value.</p>
                     <p>Based in Tamil Nadu, India, we serve clients across the US, Canada, and India with 24/7 support and overlapping time zones for seamless collaboration.</p>
                 </div>
-                <div class="about-highlights fade-in">
-                    <div class="highlight">
-                        <h4>Enterprise Focus</h4>
-                        <p>Specialized in building scalable AI solutions for commercial organizations with complex requirements.</p>
+            </div>
+            <div style="margin-top: 80px;">
+                <div class="container">
+                    <div style="text-align: center; margin-bottom: 48px;">
+                        <h3 style="font-size: 32px; font-weight: 600; color: var(--text-primary); margin-bottom: 16px;">Our Team</h3>
+                        <p style="color: var(--text-secondary); font-size: 16px;">Meet the experts behind Aithrel X</p>
                     </div>
-                    <div class="highlight">
-                        <h4>Production Ready</h4>
-                        <p>Every system we build is designed for production environments with reliability and performance at its core.</p>
-                    </div>
-                    <div class="highlight">
-                        <h4>Global Delivery</h4>
-                        <p>Serving clients worldwide with round-the-clock support and flexible engagement models.</p>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <img src="assets/sujit_silas.jpg" alt="Sujit Silas Armstrong" class="team-photo">
+                            <h4>Sujit Silas Armstrong</h4>
+                            <p class="role">UCLA, Co-founder</p>
+                            <p class="linkedin"><a href="https://www.linkedin.com/in/sujitsilasarmstrong/">LinkedIn</a></p>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-placeholder">VS</div>
+                            <h4>Vasav Shah</h4>
+                            <p class="role">UCLA, Co-founder</p>
+                            <p class="linkedin"><a href="https://www.linkedin.com/in/vasav-shah/">LinkedIn</a></p>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-placeholder">KR</div>
+                            <h4>Kanishk Rai</h4>
+                            <p class="role">UCLA, Co-founder</p>
+                            <p class="linkedin"><a href="https://www.linkedin.com/in/kr2252/">LinkedIn</a></p>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-placeholder">AS</div>
+                            <h4>Armstrong Suthahar Marshall</h4>
+                            <p class="role">Co-Director</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-placeholder">AB</div>
+                            <h4>Arul Brabhaher Marshall</h4>
+                            <p class="role">Co-Director</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="assets/stefy_arul.jpeg" alt="Stefy Arul Brabhaher" class="team-photo">
+                            <h4>Stefy Arul Brabhaher</h4>
+                            <p class="role">Oxford University, Legal</p>
+                            <p class="linkedin"><a href="https://www.linkedin.com/in/stefy1/">LinkedIn</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
